@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "title": "my new website",
+      "body": "lorem epsum...",
+      "author": "ram",
+      "id": 1
+    },
+    {
+      "title": "my website",
+      "body": "lorem epsum...",
+      "author": "ram",
+      "id": 3
+    },
+    {
+      "title": "aSA",
+      "body": "adsdadaas",
+      "author": "yoshi",
+      "id": 5
+    },
+    {
+      "title": "qwere",
+      "body": "bsdjoq wiuhqiu  hqidh ifuguidh ahds",
+      "author": "mario",
+      "id": 6
+    },
+    {
+      "title": "navigation in history check",
+      "body": "cheking history history ",
+      "author": "mario",
+      "id": 7
+    }
+  ]
+}

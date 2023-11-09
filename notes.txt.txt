@@ -1,0 +1,66 @@
+##we use {} for dynamically calling things be it any variable or function. 
+1. when writing function, we write like
+
+clickbutton=()=>{console.log('button clicked by me')};
+
+return(<button onClick={clickbutton}>Click the button</button>);
+
+
+##if we have to pass the argument from function, we will make the method anonymus and then call it. 
+ex: in button, we have made the clickbutton anonymus by putting it into arrow function since arrow function does not have any name.,
+
+clickbutton=(name)=>{console.log('button clicked by '+name)};
+
+return(<button onClick={()=>{clickbutton('ritu')}}>Click the button</button>);
+
+##note: if we will directly call it like the below, then the method will be invoked even before clicking it. and we always give reference to the method which needs to be clicked,
+
+clickbutton=(name)=>{console.log('button clicked by '+name)};
+return(<button onClick={clickbutton('ritu')}>Click the button</button>); // the message button clicked by ritu will print even before the button is clicked. this is true irrespective of the method has any argument or not.
+
+
+##useState=> useState is used to change the value dynamically or change the state of something
+dynamically. a use state can be called n number of times in a fucntion component.
+
+const [name,setname]=useState('RAM');
+
+clickMe=()=>{console.log(setname('shyam'))}
+
+
+##A “key” is a special string attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. Keys are used to give an identity to the elements in the lists.
+key is used in case of displaying lists /arrays. keys should be unique. like an id. 
+
+const [blogs,setBlogs]=useState([	
+    { title: "my new website", body: "lorem epsum...", author: "ram", id: 1 },
+		{ title: "new website", body: "lorem epsum...", author: "shyam", id: 2 },
+		{ title: "my website", body: "lorem epsum...", author: "hareram", id: 3 },
+	]);
+blogs.map((e) => (
+				<div className="blogs-preview" key={e.id}>
+					<h4>{e.title}</h4>
+					<p>{e.title}</p>
+				</div>
+			))
+
+
+
+## we can pass function as props. 
+##we can use the same component multiple times by applying props on them.
+
+
+##useEffect renders everytime the component is rendered.also when the state is changing
+useEffect(() => {
+		console.log("hi");
+	});
+
+##we can stop the rerendering by adding dependency in useeffect. 
+       useEffect(() => {
+		console.log("hi");
+	},[]);// this will render only once when the component loads for first time.
+##useffect can be used for fetching apis.
+we can add more restriction on useeffect by adding dependency.
+useEffect(() => {
+		console.log("hi");
+		console.log(blogs);
+	}, [name]); //whenever there would be  change in name, use effect will be called.
+	
